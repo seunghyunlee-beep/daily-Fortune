@@ -12,11 +12,17 @@ body {
 body {
   font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Malgun Gothic", sans-serif;
-  color: #f5f3ff;
-  background: radial-gradient(circle at 20% 20%, #3b2f6b 0%, transparent 55%),
-    radial-gradient(circle at 80% 30%, #6b2f5a 0%, transparent 50%),
-    radial-gradient(circle at 50% 90%, #2f4a6b 0%, transparent 55%),
-    linear-gradient(160deg, #17132b 0%, #0d0b1a 100%);
+  color: #fff;
+  background: linear-gradient(
+    160deg,
+    #e53935 0%,
+    #fb8c00 16%,
+    #fdd835 33%,
+    #43a047 50%,
+    #1e88e5 66%,
+    #3949ab 83%,
+    #8e24aa 100%
+  );
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
 }

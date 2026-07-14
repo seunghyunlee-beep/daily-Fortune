@@ -15,24 +15,24 @@
 .date {
   font-size: 14px;
   letter-spacing: 1px;
-  color: #b6acd9;
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 8px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
 
 .title {
   font-size: 42px;
   font-weight: 800;
-  background: linear-gradient(90deg, #ffd86b, #ff9ecb, #a58bff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fff;
   letter-spacing: -1px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
   margin-top: 10px;
   font-size: 15px;
-  color: #c8bff0;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
 
 /* --- 카드 3D 씬 --- */
@@ -68,8 +68,17 @@
 
 /* 뒷면 */
 .back {
-  background: linear-gradient(145deg, #6c4bd1 0%, #3a2a7a 100%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(
+    145deg,
+    #e53935 0%,
+    #fb8c00 18%,
+    #fdd835 36%,
+    #43a047 54%,
+    #1e88e5 72%,
+    #3949ab 86%,
+    #8e24aa 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,6 +134,25 @@
   padding: 24px 22px;
   display: flex;
   flex-direction: column;
+}
+
+.front::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    #e53935,
+    #fb8c00,
+    #fdd835,
+    #43a047,
+    #1e88e5,
+    #3949ab,
+    #8e24aa
+  );
 }
 
 .result {
@@ -228,15 +256,26 @@
   font-weight: 700;
   color: #fff;
   cursor: pointer;
-  background: linear-gradient(90deg, #ff9ecb, #a58bff);
-  box-shadow: 0 12px 30px rgba(165, 139, 255, 0.4);
-  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  background: linear-gradient(
+    90deg,
+    #e53935,
+    #fb8c00,
+    #fdd835,
+    #43a047,
+    #1e88e5,
+    #3949ab,
+    #8e24aa
+  );
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
   font-family: inherit;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
 }
 
 .button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 38px rgba(165, 139, 255, 0.55);
+  filter: brightness(1.08);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.45);
 }
 
 .button:active {
