@@ -1,0 +1,254 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 40px 20px;
+}
+
+.header {
+  text-align: center;
+}
+
+.date {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #b6acd9;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ffd86b, #ff9ecb, #a58bff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #c8bff0;
+}
+
+/* --- 카드 3D 씬 --- */
+.scene {
+  perspective: 1400px;
+  width: 320px;
+  height: 460px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.35, 1);
+  outline: none;
+}
+
+.card.isFlipped {
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+}
+
+/* 뒷면 */
+.back {
+  background: linear-gradient(145deg, #6c4bd1 0%, #3a2a7a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backPattern {
+  position: absolute;
+  inset: 14px;
+  border: 2px dashed rgba(255, 255, 255, 0.35);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+.backEmoji {
+  font-size: 88px;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+  animation: float 3s ease-in-out infinite;
+}
+
+.backText {
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 700;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* 앞면 */
+.front {
+  transform: rotateY(180deg);
+  background: linear-gradient(160deg, #fffdf7 0%, #fef2f6 100%);
+  color: #2a2140;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+}
+
+.grade {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.gradeEmoji {
+  font-size: 34px;
+}
+
+.gradeText {
+  font-size: 26px;
+  font-weight: 800;
+  color: #7a3fd6;
+}
+
+.message {
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #4a4066;
+  padding: 0 4px;
+}
+
+.aspects {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(122, 63, 214, 0.06);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.aspect {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #5a5175;
+}
+
+.aspectlabel {
+  font-weight: 700;
+  color: #7a3fd6;
+}
+
+.lucky {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px dashed #e3d5ef;
+  padding-top: 14px;
+}
+
+.luckyRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.luckyKey {
+  color: #8a80a5;
+  font-weight: 600;
+}
+
+.luckyVal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: #2a2140;
+}
+
+.swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  display: inline-block;
+}
+
+/* --- 버튼 --- */
+.button {
+  border: none;
+  border-radius: 999px;
+  padding: 16px 40px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ff9ecb, #a58bff);
+  box-shadow: 0 12px 30px rgba(165, 139, 255, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px rgba(165, 139, 255, 0.55);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 400px) {
+  .scene {
+    width: 290px;
+    height: 430px;
+  }
+  .title {
+    font-size: 36px;
+  }
+}
